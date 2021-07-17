@@ -1,3 +1,8 @@
+/*
+ * 백준 온라인 저지
+ * 문제 제목 : 숫자의 합
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>

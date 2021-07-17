@@ -1,4 +1,7 @@
-//단어 공부
+/*
+ * 백준 온라인 저지
+ * 문제 제목 : 단어 공부
+ */
 
 #include <iostream>
 #include <vector>

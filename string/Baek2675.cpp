@@ -1,3 +1,9 @@
+/*
+ * 백준 온라인 저지
+ * 문제 제목 : 문자열 반복
+ */
+
+
 #include <iostream>
 #include <string>
 

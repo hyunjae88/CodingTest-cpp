@@ -1,3 +1,8 @@
+/*
+ * 백준 온라인 저지
+ * 문제 제목 : 단어의 개수
+ */
+
 #include<iostream>
 #include<string>
 

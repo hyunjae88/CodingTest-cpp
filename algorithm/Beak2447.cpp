@@ -1,3 +1,8 @@
+/*
+ * 백준 온라인 저지
+ * 문제 제목 : 별 찍기 -10
+ */
+
 #include <iostream>
 
 using namespace std;
