@@ -1,3 +1,9 @@
+/*
+ * 백준 온라인 저지
+ * 문제 제목 : 팩토리얼
+ */
+
+
 #include <iostream>
 #include <string>
 
