@@ -5,28 +5,28 @@ using namespace std;
 
 bool isPrimeNumber(int& nInput)
 {
-    auto nPrime = 0;
+    bool isNotPrime = false;
 
-    cout << nInput << endl;
+    //cout << nInput << endl;
 
     if(nInput == 1)
     {
         return false;
     }
 
-    for(int i = 1 ; i < nInput ; ++i)
+    for(int i = 2 ; i < nInput ; ++i)
     {
         if((nInput % i) == 0)
         {
-            nPrime++;
+            isNotPrime = true;
         }
     }
 
-    if(nPrime == 1)
+    if(isNotPrime == true)
     {
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }
 
 int main()
