@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ int main()
     const auto nMax = 10001;
     cin >> nInput;
 
-    //auto list2 = make_unique<int []>(nMax);
+    //auto list = make_unique<int []>(nInput+10);
     int list[nMax] = {0};
     auto nNumber = 0;
     for(auto i = 0 ; i < nInput ; ++i)

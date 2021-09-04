@@ -19,6 +19,7 @@ bool isPrimeNumber(int& nInput)
         if((nInput % i) == 0)
         {
             isNotPrime = true;
+            break;
         }
     }
 
