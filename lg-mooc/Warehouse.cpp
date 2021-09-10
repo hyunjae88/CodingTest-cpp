@@ -77,14 +77,6 @@ int Solve()
         }
     }
 
-    for(int i = 1 ; i <= N ; ++i)
-    {
-        for(int j = 1 ; j <= N ; ++j)
-        {
-            cout << TABLE[i][j] << " ";
-        }
-        cout << "\n";
-    }
 
     int minV = numeric_limits<int>::max();
     for(int i = 1 ; i <= N ; ++i)
