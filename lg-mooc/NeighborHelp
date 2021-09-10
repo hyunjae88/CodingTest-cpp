@@ -1,0 +1,90 @@
+#include <iostream>
+using namespace std;
+
+int N;
+int C[10];
+int sol[10];
+int box[] = {1,5,10,50,100,500,1000,3000,6000,12000};
+
+void InputData()
+{
+	int i;
+	cin >> N;
+	for(i = 0 ; i < 10 ; i++)
+	{
+		cin >> C[i];
+	}
+}
+
+void OutputData(int ans)
+{
+	int i;
+	cout << ans << endl;
+	for(i = 0 ; i < 10 ; i++)
+	{
+		cout << sol[i] << " ";
+	}
+	cout << endl;
+}
+
+int main() {
+	int ans = -1;
+	
+	InputData();
+	
+	int div = 0;
+	int cnt = 0;
+// 	for(int i = 0 ; i < 10 ; ++i)
+// 	{
+// 		div = C[i+1]/C[i];
+// 		cnt = C[i] / div;
+// 		cnt = cnt * div;
+// 		cnt += N % C[i];
+// 		sol[i] += N % C[i+1];
+		
+// 		for(int j = 0 ; j < )
+// 		{
+			
+// 		}
+// 		sol[0] = 0;
+// 	}
+	
+	int div = 0;
+	int cnt = 0;
+	
+	sol[0] += (N % box[1])/box[0];
+	C[0] -= sol[0];
+	
+	div = box[1]/box[0];
+	while(C[0] > 0 || N > 0)
+	{
+		cnt++;
+		if(N > cnt * div)
+			cnt++;
+			
+	}
+	cnt = C[0] / div;
+	cnt = (cnt * div);
+	sol[0] += cnt;
+	// C[0] -= cnt;
+	
+	N = N - sol[0]*box[0];
+	
+	div = 0;
+	cnt = 0;
+	
+	cout << " N : " << N <<endl;
+	
+	sol[1] += (N % box[2])/box[1];
+	C[0] -= sol[1];
+
+	div = box[2]/box[1];
+	cnt = C[1] / div;
+	cnt = cnt * div;
+	sol[1] += cnt;
+	// C[1] -= cnt;
+	
+	OutputData(ans);
+	
+	return 0;
+}

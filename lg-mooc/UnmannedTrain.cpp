@@ -43,8 +43,6 @@ void Fill(int x, int y, int lv)
 {
     if(map[x][y] != 1)  return;
 
-    
-
     map[x][y] = 0;
     XY tempXY;
     tempXY.x = x;
