@@ -41,7 +41,7 @@ int Solve()
 		}
 	}
 
-    PrintTable();
+    // PrintTable();
 	// cout << "test";
 	for(int i = 1 ; i <= N ; ++i)
 	{
@@ -60,7 +60,7 @@ int Solve()
 		}
 	}
 
-    PrintTable();
+    // PrintTable();
 	
 	int minDistance = 100*100;
 	int maxDistance = 0;
@@ -74,7 +74,7 @@ int Solve()
 				maxDistance = Table[i][j];
 			}
 		}
-        cout << "MAx : " << maxDistance << endl;
+        // cout << "MAx : " << maxDistance << endl;
 		if(maxDistance <= minDistance)
 		{
 			minDistance = maxDistance;

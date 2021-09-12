@@ -91,8 +91,8 @@ void MakeLookUpTable()
         DecToChar[i+10] = 'A' + i;
     }
 
-    cout << CharToDec << endl;
-    cout << DecToChar << endl;
+    // cout << CharToDec << endl;
+    // cout << DecToChar << endl;
 }
 
 int main()
