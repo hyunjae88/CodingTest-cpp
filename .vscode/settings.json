@@ -41,6 +41,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "map": "cpp"
-    }
+        "map": "cpp",
+        "neighborhelp": "cpp"
+    },
+    "cmake.configureOnOpen": false
 }

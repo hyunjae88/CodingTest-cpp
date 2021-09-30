@@ -18,7 +18,7 @@ int main()
     
     cin >> num;
     
-    for(int i = 0 ; i < num ; i++)
+    for(int i = 0 ; i < num ; ++i)
     {
         cin >> cmd;
         if(cmd=="push")
