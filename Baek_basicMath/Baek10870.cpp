@@ -6,6 +6,10 @@ int main()
 {
     auto nInput = 0;
 
+    int nF[20] = {0};
+    nF[0] = 0;
+    nF[1] = 1;
+
     cin >> nInput;
 
     if(nInput == 0)
@@ -13,9 +17,7 @@ int main()
     else if(nInput == 1)
         cout << 1;
     else{
-        int nF[20] = {0};
-        nF[0] = 0;
-        nF[1] = 1;
+        
         
         for(int i = 2 ; i <= nInput ; ++i)
         {

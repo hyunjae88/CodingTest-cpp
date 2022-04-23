@@ -34,4 +34,7 @@
 *.json
 *.exe
 
+*.dSYM
+*.out.dSYMs
+
 .vscode/

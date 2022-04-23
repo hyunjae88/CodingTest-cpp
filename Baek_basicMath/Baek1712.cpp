@@ -4,25 +4,25 @@ using namespace std;
 
 int main()
 {
-    int cost1, cost2, price;
+    int inputFixCost;
+    int inputAddCost;
+    int priceLaptop;
+    int numOfSales = 0;
 
-    cin >> cost1 >> cost2 >> price;
-
-    int nSales = 0;
-
+    cin >> inputFixCost >> inputAddCost >> priceLaptop;
     
-    if(cost2 >= price)
+    if(inputAddCost >= priceLaptop)
     {
-        nSales = -1;
+        numOfSales = -1;
     }
     else
     {
-        nSales = cost1 / (price - cost2);
+        numOfSales = inputFixCost / (priceLaptop - inputAddCost);
 
-        ++nSales;
+        ++numOfSales;
     }
 
-    cout << nSales;
+    cout << numOfSales;
 
     return 0;
 }
