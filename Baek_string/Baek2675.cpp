@@ -11,24 +11,25 @@ using namespace std;
 
 int main()
 {
-    int nCnt = 0;
-    cin >> nCnt;
+    uint16_t inputNum = 0;
+    cin >> inputNum;
 
-    int r = 0;
-    string s,p = "";
+    uint16_t repeatNum = 0;
+    string str = "";
+    string result = "";
 
-    for(int i = 0 ; i < nCnt ; ++i)
+    for(uint16_t i = 0 ; i < inputNum ; ++i)
     {
-        cin>> r >> s;
-
-        for(int j = 0 ; j < s.length() ; ++j)
+        cin>> repeatNum >> str;
+        result = "";
+        for(char c : str)
         {
-            for(int k = 0 ; k < r ; ++k)
+            for(int k = 0 ; k < repeatNum ; ++k)
             {
-                cout << s.at(j);
+                result += c;
             }
         }
-        cout << endl;
+        cout << result << endl;
     }
     
     return 0;

@@ -12,10 +12,9 @@ using namespace std;
 
 int main()
 {
-	int nSpaceCnt = 0;
-    int nFindPoint = 0;
+	int spaceCnt = 0;
     string str;
-    string space = " ";
+    char space = ' ';
 
     getline(cin, str);
 
@@ -25,20 +24,20 @@ int main()
         return 0;
     }
 
-  for(int i = 0 ; i < str.length() ; ++i)
-  {
-    if(str.at(i) == ' ')
+    for(size_t i = 0 ; i < str.length() ; ++i)
     {
-      nSpaceCnt++;
-    }
-  }
+        if(str.at(i) == space)
+        {
+            spaceCnt++;
+        }
+      }
     
-    if(str[0] == ' ')
-        nSpaceCnt--;
-    if(str[str.length()-1] == ' ')
-        nSpaceCnt--;
+    if(str[0] == space)
+        spaceCnt--;
+    if(str[str.length()-1] == space)
+        spaceCnt--;
 
-    cout << nSpaceCnt + 1 << endl;
+    cout << spaceCnt + 1 << endl;
 
     return 0;
 }

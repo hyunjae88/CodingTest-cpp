@@ -8,12 +8,12 @@ const int MAX_VALUE = 1000000;
 int DP[1000001] = {0};
 int N = 0;
 
-void InputData()
+void inputData()
 {
     cin >> N;
 }
 
-void MakeOne()
+void makeOne()
 {
     DP[1] = 0;
     for(int i = 2 ; i <= N ; ++i){
@@ -30,11 +30,53 @@ void MakeOne()
 
 int main()
 {
-    InputData();
+    inputData();
 
-    MakeOne();
+    makeOne();
 
     cout << DP[N] << endl;
 
+    const int test = N;
+    cout << test;
+    // constexpr int test2 = N;
+
     return 0;
 }
+
+
+// int main()
+// {
+//     constexpr int kMax = 1000001;
+//     int result[kMax] = {0};
+//     int input = 0;
+    
+//     result[1] = 0;
+//     result[2] = 1;
+//     result[3] = 1;
+
+//     for(int i = 4 ; i < kMax ; ++i)
+//     {
+//         if(i%6==0)
+//         {
+//             result[i] = min(min(result[i-1],result[i/2]),result[i/3])+1;
+//         }
+//         else if(i%3==0)
+//         {
+//             result[i] = min(result[i/3], result[i-1])+1;
+//         }
+//         else if(i%2==0)
+//         {
+//             result[i] = min(result[i/2], result[i-1])+1;
+//         }
+//         else{
+//             result[i] = result[i-1] + 1;
+//         }
+//     }
+
+//     cin >> input;
+
+//     cout << result[input] << endl;
+// }
+
+
+

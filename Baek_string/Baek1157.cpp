@@ -4,16 +4,13 @@
  */
 
 #include <iostream>
-#include <vector>
 #include <string>
 
 using namespace std;
 
 int main()
 {
-    int r = 0;
     string str = "";
-    string strNew = "";
 
     cin >> str;
 
@@ -21,47 +18,42 @@ int main()
     {
         if(c >= 'a')
         {
-            c-= 32;
+            c-= 32+'A';
         }
-    }
-
-    char cResult;
-    auto nResultCnt = 0;
-    auto bDeuce = false;
-
-    for (char& c : str)
-    {
-        if(strNew.find(c) == string::npos)
+        else
         {
-            strNew += c;
-            int nTempCnt = 0;
-            for(char& c2 : str)
-            {
-                if(c==c2)
-                {
-                    nTempCnt++;
-                }
-            }
-            if(nResultCnt < nTempCnt)
-            {
-                nResultCnt = nTempCnt;
-                cResult = c;
-                bDeuce = false;
-            }
-            else if(nResultCnt == nTempCnt)
-            {
-                bDeuce = true;
-            }
+            c-= 'A';
         }
     }
 
-    if(bDeuce == true)
+    int     cntAlphabet[32] = {0};
+    int     maxCnt      = 0;
+    int     maxIndex    = -1;
+    char    result;
+    bool    bDeuce      = false;
+
+    for(char& c : str)
+    {
+        ++cntAlphabet[c];
+        if(cntAlphabet[c] > maxCnt)
+        {
+            maxCnt = cntAlphabet[c];
+            bDeuce = false;
+            maxIndex = c;
+        }
+        else if(cntAlphabet[c] == maxCnt)
+        {
+            bDeuce = true;
+        }
+    }
+
+    if(bDeuce)
     {
         cout << "?" << endl;
     }
     else{
-        cout << cResult << endl;
-        //cout << strNew << endl;
+        result = maxIndex + 'A';
+        cout << result << endl;
     }
     
     return 0;

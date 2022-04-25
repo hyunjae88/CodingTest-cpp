@@ -9,38 +9,35 @@
 
 using namespace std;
 
+void reversingStr(string& str)
+{
+    string output("");
+    for(char c : str)
+    {
+        output.insert(0, 1, c);
+    }
+    str = output;
+}
+
 int main()
 {
-    string strN1;
-    string strN2;
-    string strNewN1("");
-    string strNewN2("");
+    string strInput1("");
+    string strInput2("");
 
-    cin >> strN1 >> strN2;
+    cin >> strInput1 >> strInput2;
 
-    //cout << "input : ";
-    //cout << strN1 << " " << strN2 << endl;
+    // since C++20
+    // std::reverse(strInput1.begin(), strInput1.end());
+    // std::reverse(strInput2.begin(), strInput2.end());
 
-    for(int i = 0 ; i < strN1.length() ; ++i)
-    {
-        strNewN1.insert(i, string(1, strN1.at(strN1.length()-1-i)));
-        strNewN2.insert(i, string(1, strN2.at(strN2.length()-1-i)));
-        
-    }
-    auto n1 = stoi(strNewN1);
-    auto n2 = stoi(strNewN2);
+    // C++17
+    reversingStr(strInput1);
+    reversingStr(strInput2);
 
-    //cout << "reverse : ";
-    //cout << strNewN1 << " " << strNewN2 << endl;
+    auto reversedNumber1 = stoi(strInput1);
+    auto reversedNumber2 = stoi(strInput2);
 
-    if(n1 >= n2)
-    {
-        cout << n1 << endl;
-    }
-    else
-    {  
-        cout << n2 << endl;
-    }
+    cout << ((reversedNumber1 > reversedNumber2) ? reversedNumber1 : reversedNumber2) << endl;
 
     return 0;    
 }

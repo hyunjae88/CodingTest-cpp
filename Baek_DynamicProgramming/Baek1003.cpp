@@ -5,9 +5,9 @@ using namespace std;
 
 int main()
 {
-    int nTestNumber;
-    int nInput = 0;
-    cin >> nTestNumber;
+    int testNumber;
+    int input = 0;
+    cin >> testNumber;
 
     vector<int> vZero;
     vector<int> vOne;
@@ -21,22 +21,22 @@ int main()
         fibo[i] = fibo[i-1] + fibo[i-2];
     }
 
-    for(int i = 0 ; i < nTestNumber ; ++i)
+    for(int i = 0 ; i < testNumber ; ++i)
     {  
-        cin >> nInput;
-        if(nInput == 0){
+        cin >> input;
+        if(input == 0){
             vZero.push_back(1);
             vOne.push_back(0);
-        }else if(nInput == 1){
+        }else if(input == 1){
             vZero.push_back(0);
             vOne.push_back(1);
         }else{
-            vZero.push_back(fibo[nInput-1]);
-            vOne.push_back(fibo[nInput]);
+            vZero.push_back(fibo[input-1]);
+            vOne.push_back(fibo[input]);
         }
     }
 
-    for(int i = 0 ; i < nTestNumber ; ++i)
+    for(int i = 0 ; i < testNumber ; ++i)
     {
         cout << vZero[i] << " " << vOne[i] << "\n";
     }

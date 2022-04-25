@@ -9,23 +9,26 @@
 
 using namespace std;
 
-bool GroupWordCheck(string &str)
+bool isGroupWord(string &str)
 {
     bool bRtn = true;
 
-    for(int i = 0 ; i < str.length()-1 ; ++i)
+    uint16_t index = 0;
+    
+    for(char& c : str)
     {
-        char c = str.at(i);
-
-        //cout << c << endl;
-
-        if(c != str.at(i+1))
+        if(index == str.length()-1)
         {
-            if(str.find(c, i+1) != string::npos)
+            break;
+        }
+        if(c != str.at(index+1))
+        {
+            if(str.find(c, index+1) != string::npos)
             {
                 bRtn = false;
             }
         }
+        index++;
     }
 
     return bRtn;
@@ -33,25 +36,25 @@ bool GroupWordCheck(string &str)
 
 int main()
 {
-    int nNum = 0;
-    int nResult = 0;
+    int inputNum = 0;
+    size_t result = 0;
 
-    cin >> nNum;
+    cin >> inputNum;
 
-    auto strSet = make_unique<string[]>(nNum);
+    auto strSetArr = make_unique<string[]>(inputNum);
 
    // cout << "입력" << endl;
-    for(int i = 0 ; i < nNum ; ++i)
+    for(int i = 0 ; i < inputNum ; ++i)
     {
-        cin >> strSet[i];
+        cin >> strSetArr[i];
 
-        if(GroupWordCheck(strSet[i]))
+        if(isGroupWord(strSetArr[i]))
         {
-            nResult++;
+            result++;
         }
     }
 
-    cout << nResult;
+    cout << result;
 
     return 0;
 }
