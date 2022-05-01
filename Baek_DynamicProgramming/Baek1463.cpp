@@ -36,10 +36,6 @@ int main()
 
     cout << DP[N] << endl;
 
-    const int test = N;
-    cout << test;
-    // constexpr int test2 = N;
-
     return 0;
 }
 
