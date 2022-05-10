@@ -15,21 +15,18 @@ int main()
     cin >> inputNum;
 
     uint16_t repeatNum = 0;
-    string str = "";
-    string result = "";
+    string str("");
+    string result("");
 
     for(uint16_t i = 0 ; i < inputNum ; ++i)
     {
         cin>> repeatNum >> str;
-        result = "";
         for(char c : str)
         {
-            for(int k = 0 ; k < repeatNum ; ++k)
-            {
-                result += c;
-            }
+            result.append(repeatNum, c);
         }
         cout << result << endl;
+        result = "";
     }
     
     return 0;

@@ -10,27 +10,26 @@ using namespace std;
 
 int main()
 {
-    string str = "";
-
+    string str("");
     cin >> str;
 
     for(char& c : str)
     {
         if(c >= 'a')
         {
-            c-= 32+'A';
+            c-= 'a';
         }
         else
         {
             c-= 'A';
         }
     }
-
-    int     cntAlphabet[32] = {0};
+    const size_t  alphabetSize = 'a'-'A';
+    int     cntAlphabet[alphabetSize] = {0};
     int     maxCnt      = 0;
     int     maxIndex    = -1;
-    char    result;
     bool    bDeuce      = false;
+    char    result      = '?';
 
     for(char& c : str)
     {
@@ -49,7 +48,7 @@ int main()
 
     if(bDeuce)
     {
-        cout << "?" << endl;
+        cout << result << endl;
     }
     else{
         result = maxIndex + 'A';

@@ -6,9 +6,7 @@
 #include<iostream>
 #include<string>
 
-
 using namespace std;
-
 
 int main()
 {
@@ -24,17 +22,17 @@ int main()
         return 0;
     }
 
-    for(size_t i = 0 ; i < str.length() ; ++i)
+    for (auto &c : str)
     {
-        if(str.at(i) == space)
+        if(c == space)
         {
             spaceCnt++;
         }
-      }
+    }
     
-    if(str[0] == space)
+    if(str.at(0) == space)
         spaceCnt--;
-    if(str[str.length()-1] == space)
+    if(str.at(str.length()-1) == space)
         spaceCnt--;
 
     cout << spaceCnt + 1 << endl;

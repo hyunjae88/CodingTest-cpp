@@ -15,12 +15,12 @@ int main()
 
     cin >> str;
 
-    int nAlphabetCnt = 'z' - 'a' + 1;
-    int nFindIndex = 0;
+    int alphabetCnt = 'A' - 'a';
+    int findIndex = 0;
 
-    for(int i = 0 ; i < nAlphabetCnt ; ++i)
+    for(int i = 0 ; i < alphabetCnt ; ++i)
     {
-        nFindIndex = str.find('a'+i);
-        cout << nFindIndex << " ";
+        findIndex = str.find('a'+i);
+        cout << findIndex << " ";
     }   
 }

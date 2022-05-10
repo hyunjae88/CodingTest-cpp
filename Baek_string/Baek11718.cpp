@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    string str;
+    string str("");
     queue<string> myQ;
 
     while(true)
