@@ -5,21 +5,17 @@
 
 using namespace std;
 
-struct TextAndLength{
-    unsigned short nLength = 0;
-    string          str = "";
-};
 
-bool compare(const TextAndLength& input1, const TextAndLength& input2)
+bool compare(const string& input1, const string& input2)
 {
-    if(input1.nLength > input2.nLength)
+    if(input1.length() > input2.length())
     {
         return true;
     }
-    else if(input1.nLength == input2.nLength)
+    else if(input1.length() == input2.length())
     {
         
-        if(input1.str.compare(input2.str) > 0)
+        if(input1.compare(input2) > 0)
         {
             return true;
         }
@@ -29,33 +25,29 @@ bool compare(const TextAndLength& input1, const TextAndLength& input2)
 
 int main()
 {
-    auto nInput = 0;
+    int input = 0;
+    vector<string> v;
+    string str("");
 
-    cin >> nInput;
+    cin >> input;
 
-    vector<TextAndLength> v;
-
-    TextAndLength tal;
-
-    for(auto i = 0 ; i < nInput ; ++i)
+    for(auto i = 0 ; i < input ; ++i)
     {
-        cin>>tal.str;
-        tal.nLength = tal.str.length();
-        v.push_back(tal);
+        cin>>str;
+        v.push_back(str);
     }
 
     sort(v.begin(), v.end(), compare);
 
     string strPre = "";
-    for(auto i = 0 ; i < nInput ; ++i)
+    for(auto i = 0 ; i < input ; ++i)
     {
-        if(strPre != v.back().str)
+        if(strPre != v.back())
         {
-            strPre = v.back().str;
+            strPre = v.back();
             cout << strPre << "\n"; 
         }
-        v.pop_back();      
-        
+        v.pop_back();
     }
 
     return 0;

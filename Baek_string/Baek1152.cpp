@@ -31,9 +31,14 @@ int main()
     }
     
     if(str.at(0) == space)
+    {
         spaceCnt--;
+    }
+        
     if(str.at(str.length()-1) == space)
+    {
         spaceCnt--;
+    }
 
     cout << spaceCnt + 1 << endl;
 

@@ -38,7 +38,7 @@ int main()
 
     for(int i = 0 ; i < testNumber ; ++i)
     {
-        cout << vZero[i] << " " << vOne[i] << "\n";
+        cout << vZero.at(i) << " " << vOne.at(i) << "\n";
     }
 
     return 0;

@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int nInput = 0;
-    int nMaxHouse = 1000;
+    constexpr int nMaxHouse = 1000;
     int R[nMaxHouse+1] = {0};
     int G[nMaxHouse+1] = {0};
     int B[nMaxHouse+1] = {0};

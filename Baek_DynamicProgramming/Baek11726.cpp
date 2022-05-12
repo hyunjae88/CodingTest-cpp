@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//https://kosaf04pyh.tistory.com/222 설명 참고
+
 int DP[1010];
 
 int main()

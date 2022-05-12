@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+#include <queue>
 
 using namespace std;
 
@@ -24,20 +24,20 @@ int main()
 
     cin >> N;
 
-    list<int> listOutput;
+    queue<int> queueOutput;
 
     int nInput = 0;
     for(int i = 0 ; i < N ; ++i)
     {
         cin >> nInput;
         solve(nInput);
-        listOutput.push_back(DP[nInput]);
+        queueOutput.push(DP[nInput]);
     }
 
     for(int i = 0 ; i < N ; ++i)
     {
-        cout << listOutput.front() << "\n";
-        listOutput.pop_front();
+        cout << queueOutput.front() << "\n";
+        queueOutput.pop();
     }
 
 }

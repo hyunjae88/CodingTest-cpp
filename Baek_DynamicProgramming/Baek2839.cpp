@@ -24,11 +24,13 @@ int main()
             pl.nSamll = i;
             pl.nBig = j;
             nIndex = i*3+j*5;
-            if(DP[nIndex].nBig != -1)
+            if(DP[nIndex].nBig != -1)  //DP에 기존 값이 있는 경우
             {
                 if(DP[nIndex].nBig < pl.nBig)
                     DP[i*3+j*5] = pl;
-            }else{
+            }
+            else                        //DP에 값이 처음 입력되는 경우
+            {  
                 DP[i*3+j*5] = pl;
             }
             

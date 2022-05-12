@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int MAX_VALUE = 1000000;
+constexpr int kMAX_VALUE = 1000000;
 
 int DP[1000001] = {0};
 int N = 0;
