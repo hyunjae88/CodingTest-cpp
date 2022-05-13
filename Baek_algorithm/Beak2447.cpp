@@ -9,6 +9,7 @@ using namespace std;
 
 void drawStar(int x, int y, int size)
 {
+    // cout << x << " " << y << " " << size << "\n";
    if((x/size)%3==1 && (y/size)%3 == 1)
    {
        cout << " ";

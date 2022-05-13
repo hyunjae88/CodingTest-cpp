@@ -3,8 +3,8 @@
 #include <algorithm>
 
 using namespace std;
-struct point{
-    point(){
+struct Point{
+    Point(){
         x = 0;
         y = 0;
     }
@@ -12,15 +12,15 @@ struct point{
     int y;
 };
 
-bool comparePoint(const point &p1, const point &p2)
+bool comparePoint(const Point &p1, const Point &p2)
 {
-    if(p1.y > p2.y)
+    if(p1.y < p2.y)
     {
         return true;
     }
     else if(p1.y == p2.y)
     {
-        if(p1.x > p2.x)
+        if(p1.x < p2.x)
         {
             return true;
         }
@@ -30,9 +30,9 @@ bool comparePoint(const point &p1, const point &p2)
 
 int main()
 {
-    vector<point> vList;
+    vector<Point> vList;
     auto nInput = 0;
-    point stPoint;
+    Point stPoint;
 
     cin >> nInput;
 
@@ -44,10 +44,9 @@ int main()
 
     sort(vList.begin(), vList.end(), comparePoint);
 
-    for(int i = 0 ; i < nInput ; ++i)
+    for(const Point& point : vList)
     {
-        cout << vList.back().x << " " << vList.back().y << "\n";
-        vList.pop_back();
+        cout << point.x << " " << point.y << "\n";
     }
 
     return 0;

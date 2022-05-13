@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 bool compare(const string& input1, const string& input2)
 {
     if(input1.length() > input2.length())

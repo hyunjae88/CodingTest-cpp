@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int MAX = 10;
+constexpr int MAX = 10;
 
 int N, M = 0;
 

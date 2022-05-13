@@ -4,30 +4,25 @@
  */
 
 #include <iostream>
-#include <vector>
 #include <string>
 
 using namespace std;
 
 int main()
 {
+    int numberCnt   = 0;
+    string inputStr("");
+    int result      = 0;
 
-    int nCnt;
+    cin >> numberCnt;
+    cin >> inputStr;
 
-    cin >> nCnt;
-
-    string str;
-
-    cin >> str;
-
-    int nResult = 0;
-
-    for(int i = 0 ; i < nCnt ; ++i)
+    for(const char& c : inputStr)
     {
-        nResult += (str.at(i)-'0');
+        result += (c-'0');
     }
 
-    cout << nResult << endl;
+    cout << result << endl;
     
     return 0;
 }

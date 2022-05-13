@@ -9,8 +9,8 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    auto nInput = 0;
-    const auto nMax = 10001;
+    int nInput = 0;
+    const int nMax = 10001;
     cin >> nInput;
 
     //auto list = make_unique<int []>(nInput+10);

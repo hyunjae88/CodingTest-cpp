@@ -13,6 +13,7 @@ int main()
     int N = 0;
     int P = 0;
     int sum = 0;
+    int sumFinal = 0;
     cin >> N;
     
     vector<int> v;
@@ -23,17 +24,16 @@ int main()
         v.push_back(P);
     }
 
-    sort(v.begin(), v.end(), compare);
+    sort(v.begin(), v.end());
 
-    int sum2 = 0;
-    for(int i = 0 ; i < N ; ++i)
+    for(const int p : v)
     {
         // sum += v[i] * (N-i);
-        sum += v[i];
-        sum2 += sum;
+        sum += p;
+        sumFinal += sum;
     }
 
-    cout << sum2 << endl;
+    cout << sumFinal << endl;
 
     return 0;
 }
