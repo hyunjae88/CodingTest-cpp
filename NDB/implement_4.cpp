@@ -8,7 +8,7 @@ int dy[4] = {0, 1, 0, -1};
 
 int N, M = 0;
 
-int nextDirection(const int& dir)
+int getNextDirection(const int& dir)
 {
     return (dir+3)%4;
 }
@@ -49,7 +49,7 @@ int main()
     while(true)
     {
         map[x][y] = 2;
-        direction = nextDirection(direction);
+        direction = getNextDirection(direction);
         ++turnCnt;
         nX = x + dx[direction];
         nY = y + dy[direction];
