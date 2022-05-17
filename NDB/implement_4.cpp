@@ -28,13 +28,13 @@ int main()
 
     cin >> N >> M;
 
-    int map[N][M] = {0,};
-    int x, y = 0;
-    int nX, nY = -1;
-    int oX, oY = -1;
-    int direction = 0;
-    int turnCnt = 0;
-    int visitCnt = 1;
+    int map[N][M] = {0,};   //map
+    int x, y = 0;       //현재 위치
+    int nX, nY = -1;    //예상되는 다음 위치
+    int oX, oY = -1;    //직전 위치
+    int direction = 0;  //현재 방향
+    int turnCnt = 0;    //방향 변경 횟수
+    int visitCnt = 1;   //방문한 육지 수
 
     cin >> x >> y >> direction;
 
@@ -45,10 +45,13 @@ int main()
             cin >> map[i][j];
         }
     }
-    
+
+    // '1'은 바다
+    // '0'은 육지
+    // '2'는 지나온 육지
     while(true)
     {
-        map[x][y] = 2;
+        map[x][y] = 2;     
         direction = getNextDirection(direction);
         ++turnCnt;
         nX = x + dx[direction];
