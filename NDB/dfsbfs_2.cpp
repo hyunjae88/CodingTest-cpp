@@ -16,18 +16,24 @@ int bfs(int x, int y)
     int pathLength = 1;
     myQueue.push_back(make_pair(x,y));
 
+    int first   = 0;
+    int second = 0;
+
     while(!myQueue.empty())
     {
-       for(int i = 0 ; i < 4 ; ++i)
+        first = myQueue.front().first;
+        second = myQueue.front().second;
+        myQueue.pop_front();
+
+        if(first == N && second == M)
+        {
+            return map[first][second];
+        }
+
+        for(int i = 0 ; i < 4 ; ++i)
        {
-           
-            nX = (myQueue.front().first + dx[i]);
-            nY = myQueue.front().second + dy[i];
-            myQueue.pop_front();
-            if(nX == N && nY == M)
-            {
-                return map[nX][nY];
-            }
+            nX = first + dx[i];
+            nY = second + dy[i];
 
             if(nX < 1 || nX > N || nY < 1 || nY > M)
             {
@@ -39,11 +45,11 @@ int bfs(int x, int y)
             } 
             else if(map[nX][nY] == 1)
             {
-                cout << "x : " << x << " y : " << y;
-                map[nX][nY] = ++pathLength;
+                // cout << "x : " << nX << " y : " << nY ;
+                map[nX][nY] = map[first][second] + 1;
+                // cout << "length : " << map[nX][nY] << endl;
                 myQueue.push_back(make_pair(nX,nY));
-            }
-            
+            } 
        }
     }
 
@@ -62,7 +68,7 @@ int main()
             cin >> map[i][j];
         }
     }    
-
+    // cout << "BFS Start" << endl;
     cout << bfs(1, 1) << endl;;
 
     return 0;

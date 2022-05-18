@@ -48,8 +48,6 @@ bool dfs2(int x, int y)
         return true;
     }
     return false;
-
-    return false;
 }
 
 
