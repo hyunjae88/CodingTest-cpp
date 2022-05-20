@@ -28,6 +28,7 @@ bool dfs(int x, int y)
     return false;
 }
 
+//반복문 풀이방법
 bool dfs2(int x, int y)
 {
     vector<pair<int, int>> myVector;
@@ -47,8 +48,6 @@ bool dfs2(int x, int y)
         }
         return true;
     }
-    return false;
-
     return false;
 }
 
