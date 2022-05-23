@@ -21,7 +21,7 @@ bool dfs(int x, int y)
         frame[x][y] = 1;
         for(int i = 0 ; i < 4 ; ++i)
         {
-            dfs(x+dx[i],y+dy[i]);
+            dfs(x+dx[i], y+dy[i]);
         }
         return true;
     }
