@@ -32,23 +32,33 @@ bool dfs(int x, int y)
 bool dfs2(int x, int y)
 {
     vector<pair<int, int>> myVector;
+    myVector.push_back(make_pair(x,y));
+    bool result = false;
 
-    if(x < 0 || x >= N || y < 0 || y >=M)
+    while(myVector.empty())
     {
-        return false;
-    }
-    if(frame[x][y] == 0)
-    {
-        frame[x][y] = 1;
-        myVector.push_back(make_pair(x,y));
+        
+        x = myVector.back().first;
+        y = myVector.back().second;
+        myVector.pop_back();
 
-        for(int i = 0 ; i < 4 ; ++i)
+        if(x < 0 || x >= N || y < 0 || y >=M)
         {
-            
+            continue;
         }
-        return true;
+
+        if(frame[x][y] == 0)
+        {
+            result = true;
+            frame[x][y] = 1;
+            for(int i = 0 ; i < 4 ; ++i)
+            {
+                myVector.push_back(make_pair(x+dx[i], y+dy[i]));
+            }
+        }
     }
-    return false;
+
+    return result;
 }
 
 
@@ -56,6 +66,8 @@ int main()
 {
 
     int result = 0;
+    int resultLoop = 0;
+
     cin >> N >> M;
 
     for(int i = 0 ; i < N ; ++i)
@@ -66,18 +78,32 @@ int main()
         }
     }
 
+    //재귀함수를 활용한 DFS 활용
+    // for(int i = 0 ; i < N ; ++i)
+    // {
+    //     for(int j = 0 ; j < M ; ++j)
+    //     {
+    //         if(dfs(i, j))
+    //         {
+    //             ++result;
+    //         }
+    //     }
+    // }
+
+    //반복문을 활용한 DFS 활용
     for(int i = 0 ; i < N ; ++i)
     {
         for(int j = 0 ; j < M ; ++j)
         {
-            if(dfs(i, j))
+            if(dfs(i,j))
             {
-                ++result;
+                ++resultLoop;
             }
         }
     }
 
-    cout << result;
+    // cout << result << endl;
+    cout << resultLoop << endl;
 
     return 0;
 }
