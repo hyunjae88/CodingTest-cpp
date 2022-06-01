@@ -63,7 +63,7 @@ int main()
         myQueue.push_back(tempInput);
     }
 
-    cout << "max : " << max << endl;
+    // cout << "max : " << max << endl;
 
     result = binarySearch(myQueue, 0, max);
 
