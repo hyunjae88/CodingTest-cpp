@@ -9,16 +9,12 @@ struct DstData{
     int distance;
 };
 
-
 constexpr int kBigDec = numeric_limits<int>::max();
-constexpr int kReserveVector = 10000;
 constexpr int kNodeMaxCnt = 100001;
 
 int N, M;
 int startNode;
 vector<DstData> graph[kNodeMaxCnt];
-
-
 
 int getShortNode(vector<int>& shortestDistance, vector<bool>& visited)
 {
@@ -35,7 +31,7 @@ int getShortNode(vector<int>& shortestDistance, vector<bool>& visited)
     return index;
 }
 
-int dijkstra(vector<int>& shortestDistance, vector<bool>& visited, int startNode)
+void dijkstra(vector<int>& shortestDistance, vector<bool>& visited, int startNode)
 {
     shortestDistance[startNode] = 0;
     visited[startNode] = true;
@@ -72,11 +68,10 @@ int main()
     cin >> startNode;
 
     vector<bool> visited(N+1, false);
-    vector<int> shortestDisance(N+1, kBigDec);
-    shortestDisance[0] = -1;
+    vector<int> shortestDistance(N+1, kBigDec);
+    shortestDistance[0] = -1;
     
     int src = 0;
-    int dst = 0;
     DstData inputDstData;
 
     for(int i = 0 ; i < M ; ++i)
@@ -85,10 +80,10 @@ int main()
         graph[src].emplace_back(inputDstData);
     }
 
-    dijkstra(shortestDisance, visited, startNode);
+    dijkstra(shortestDistance, visited, startNode);
 
     int tempIndex = 0;
-    for(int& sol : shortestDisance)
+    for(int& sol : shortestDistance)
     {
         cout << tempIndex++ << " " << sol << "\n";
     }
