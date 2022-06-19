@@ -52,7 +52,7 @@ int main()
         }
     }
 
-    long long distance = graph[1][K] + graph[K][X];
+    int distance = graph[1][K] + graph[K][X];
     
     if(distance >= kInfinite)
     {
