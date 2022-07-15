@@ -22,7 +22,6 @@ int main()
 
     sort(list.begin(), list.end());
 
-
     int cnt     = 0;
     int result  = 0;
 
